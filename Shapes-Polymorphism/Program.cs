@@ -8,9 +8,12 @@ namespace Shapes_Polymorphism
             //create instances of shapes
             shape c = new circle(5);
             shape R = new rectangle(5,3.62);
-            shape t = new triangle();
-            shape s = new square();
-
+            shape t = new triangle(5,3);
+            shape s = new square(5);
+            Console.WriteLine($"circle(5)={c.area()}\n" +
+                $"rectangle(5,3.62)={R.area()}\n" +
+                $"triangle(5,3)= {t.area()}\n" +
+                $"square(5)= {s.area()}\n");
             c.area();
             R.area();
             s.area();
@@ -46,7 +49,10 @@ namespace Shapes_Polymorphism
             public override double area() { return 0.5 * lentgh * width; }
         }
 
-        public class square : shape { }
+        public class square : shape {
+            public square(double side) { lentgh = side; width = side; }
+            public override double area() { return lentgh * width; }
+        }
 
     }
 }
