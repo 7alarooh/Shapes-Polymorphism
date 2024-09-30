@@ -7,7 +7,7 @@ namespace Shapes_Polymorphism
         {
             //create instances of shapes
             shape c = new circle(5);
-            shape R = new rectangle();
+            shape R = new rectangle(5,3.62);
             shape t = new triangle();
             shape s = new square();
 
@@ -40,7 +40,11 @@ namespace Shapes_Polymorphism
         {public rectangle(double lentgh,double width) { this.lentgh=lentgh; this.width=width; }
             public override double area(){return lentgh*width;}
         }
-        public class triangle : shape { }
+        //derived class: Triangle
+        public class triangle : shape {
+            public triangle(double baseLength, double height) { lentgh = baseLength; width = height; }
+            public override double area() { return 0.5 * lentgh * width; }
+        }
 
         public class square : shape { }
 
