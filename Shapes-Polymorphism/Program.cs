@@ -29,6 +29,11 @@ namespace Shapes_Polymorphism
         public class circle:shape 
         {
             private double radius;
+            public circle(double radius)
+            {
+                this.radius = radius;
+            }
+            public override double area() { return Math.PI*radius*radius; }
         }
         public class rectangle : shape { }
         public class triangle : shape { }
